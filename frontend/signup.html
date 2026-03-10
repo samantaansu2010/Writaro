@@ -272,7 +272,7 @@
       if (!res.data?.accessToken) {
         // Email verification required
         localStorage.setItem('pendingEmail', email);
-        window.location.href = `verify-email.html?email=${encodeURIComponent(email)}`;
+        window.location.href = `/verify-email.html?email=${encodeURIComponent(email)}`;
         return;
       }
       showAlert('Account created! Redirecting...', 'success');
@@ -299,7 +299,7 @@
     const { Auth } = await import('./scripts/api.js');
     Auth.store({ accessToken: params.get('token'), refreshToken: params.get('refresh') });
     Auth.getMe().catch(() => {});
-    window.location.href = 'discover.html';
+    window.location.href = '/discover.html';
   }
 
   // Enter key submit
