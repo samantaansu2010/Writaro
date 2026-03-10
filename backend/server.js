@@ -153,9 +153,11 @@ const startServer = async () => {
   const PORT = config.PORT;
   server.listen(PORT, '0.0.0.0', () => {
     console.log(`\n🚀 Writavo v2 running on port ${PORT}`);
-    console.log(`   Health: http://localhost:${PORT}/api/health`);
+    console.log('   Health: https://writaro.onrender.com/api/health');
     console.log(`   Env:    ${config.NODE_ENV}\n`);
   });
+
+
 
   const shutdown = () => server.close(() => { console.log('👋 Server closed'); process.exit(0); });
   process.on('SIGINT',  shutdown);
